@@ -315,7 +315,7 @@
     
     }else{
         
-    /***MZTimerLabelTypeTimer Logic***/
+    /***  Logic***/
         
         if (_counting) {
             

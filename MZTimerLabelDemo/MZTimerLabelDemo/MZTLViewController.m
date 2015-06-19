@@ -30,40 +30,40 @@
      * Use timer on existing and styled MZTimerLabel from Storyboard/Xib, simplest usage.
      * REMARKS:initialize without TimerType using MZTimerLabelTypeStopWatch as default
      ********************************************/
-    [_lblTimerExample1 start];
-    
-    /*******************************************
-     * ------Example 2-----
-     * Using MZTimerLabel instance only and set differene time format
-     ********************************************/
-    MZTimerLabel *timer2 = [[MZTimerLabel alloc] initWithFrame:CGRectMake(0, 155, self.view.frame.size.width, 40)];
-    timer2.timerType = MZTimerLabelTypeStopWatch;
-    [self.view addSubview:timer2];
-    //do some styling
-    timer2.timeLabel.backgroundColor = [UIColor clearColor];
-    timer2.timeLabel.font = [UIFont systemFontOfSize:28.0f];
-    timer2.timeLabel.textColor = [UIColor brownColor];
-    timer2.timeLabel.textAlignment = NSTextAlignmentCenter; //UITextAlignmentCenter is deprecated in iOS 7.0
-    //fire
-    [timer2 start];
-    
-    
-    /*******************************************
-     * ------Example 3-----
-     * Count Down Timer
-     ********************************************/
-    timerExample3 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample3 andTimerType:MZTimerLabelTypeTimer];
-    [timerExample3 setCountDownTime:30*60]; //** Or you can use [timer3 setCountDownToDate:aDate];
-    [timerExample3 start];
-
-    
-    /*******************************************
-     * ------Example 4-----
-     * Stopwatch with controls and time format
-     * Adjust starting Value
-     ********************************************/
-    timerExample4 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample4 andTimerType:MZTimerLabelTypeStopWatch];
-    timerExample4.timeFormat = @"HH:mm:ss SS";
+//    [_lblTimerExample1 start];
+//    
+//    /*******************************************
+//     * ------Example 2-----
+//     * Using MZTimerLabel instance only and set differene time format
+//     ********************************************/
+//    MZTimerLabel *timer2 = [[MZTimerLabel alloc] initWithFrame:CGRectMake(0, 155, self.view.frame.size.width, 40)];
+//    timer2.timerType = MZTimerLabelTypeStopWatch;
+//    [self.view addSubview:timer2];
+//    //do some styling
+//    timer2.timeLabel.backgroundColor = [UIColor clearColor];
+//    timer2.timeLabel.font = [UIFont systemFontOfSize:28.0f];
+//    timer2.timeLabel.textColor = [UIColor brownColor];
+//    timer2.timeLabel.textAlignment = NSTextAlignmentCenter; //UITextAlignmentCenter is deprecated in iOS 7.0
+//    //fire
+//    [timer2 start];
+//    
+//    
+//    /*******************************************
+//     * ------Example 3-----
+//     * Count Down Timer
+//     ********************************************/
+//    timerExample3 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample3 andTimerType:MZTimerLabelTypeTimer];
+//    [timerExample3 setCountDownTime:30*60]; //** Or you can use [timer3 setCountDownToDate:aDate];
+//    [timerExample3 start];
+//
+//    
+//    /*******************************************
+//     * ------Example 4-----
+//     * Stopwatch with controls and time format
+//     * Adjust starting Value
+//     ********************************************/
+//    timerExample4 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample4 andTimerType:MZTimerLabelTypeStopWatch];
+//    timerExample4.timeFormat = @"HH:mm:ss SS";
     
     
     /*******************************************
@@ -74,75 +74,75 @@
     [timerExample5 setCountDownTime:10];
 
     
-    /*******************************************
-     * ------Example 6-----
-     * Countdown finish callback with classic delegate way
-     * implement - timerLabelEndCountDownTimer:withTime:
-     ********************************************/
-    timerExample6 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample6 andTimerType:MZTimerLabelTypeTimer];
-    [timerExample6 setCountDownTime:5];
-    timerExample6.resetTimerAfterFinish = YES;
-    timerExample6.delegate = self;
-    
-    /*******************************************
-     * ------Example 7-----
-     * Countdown finish callback with convenient callback block
-     * and showing how to set text of label after.
-     ********************************************/
-    timerExample7 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample7 andTimerType:MZTimerLabelTypeTimer];
-    [timerExample7 setCountDownTime:0];
-    timerExample7.resetTimerAfterFinish = NO; //IMPORTANT, if you needs custom text with finished, please do not set resetTimerAfterFinish to YES.
-    timerExample7.timeFormat = @"mm:ss SS";
-    
-    /*******************************************
-     * ------Example 8-----
-     * Stopwatch with progress delegate that will change the text to red color if time counted > 10
-     * Button to add 2 seconds each time you press.
-     ********************************************/
-    timerExample8 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample8];
-    timerExample8.timeFormat = @"mm:ss";
-    
-    
-    /*******************************************
-     * ------Example 9-----
-     * Use delegate to determine what text to be shown in corresponding time
-     * This one display days as addtional hours, see implementation below
-     ********************************************/
-   
-    timerExample9 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample9 andTimerType:MZTimerLabelTypeTimer];
-    [timerExample9 setCountDownTime:3600*24*2];
-    timerExample9.delegate = self;
-    [timerExample9 start];
-    
-    /*******************************************
-     * ------Example 10-----
-     * Modify current couting timer of a stopwatch, see implemention below
-     ********************************************/
-    
-    timerExample10 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample10 andTimerType:MZTimerLabelTypeStopWatch];
-    [timerExample10 start];
-    
-    /*******************************************
-     * ------Example 11-----
-     * Modify current couting timer of a countdown timer, see implemention below
-     ********************************************/
-    
-    timerExample11 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample11 andTimerType:MZTimerLabelTypeTimer];
-    [timerExample11 setCountDownTime:3600];
-    [timerExample11 start];
-    
-    /*******************************************
-     * ------Example 12-----
-     * You may need more than 23 hours display in some situation, like if you prefer showing 48 hours rather than 2days.
-     * As MZTimerLabel uses NSDateFormatter to convert the time difference to String, there is no format string support 
-     * this purpose, so you may implement custom display text demo om example 9. Or set the property `shouldCountBeyondHHLimit` of
-     * MZTimerLabel. 
-     * REMARKS: Only `HH` and `H` in the format string will be affected. Other hour format like "h", "k", "K" remain their own behaviour.
-     ********************************************/
-    
-    timerExample12 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample12 andTimerType:MZTimerLabelTypeStopWatch];
-    [timerExample12 setStopWatchTime:86395];
-    [timerExample12 setShouldCountBeyondHHLimit:YES];
+//    /*******************************************
+//     * ------Example 6-----
+//     * Countdown finish callback with classic delegate way
+//     * implement - timerLabelEndCountDownTimer:withTime:
+//     ********************************************/
+//    timerExample6 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample6 andTimerType:MZTimerLabelTypeTimer];
+//    [timerExample6 setCountDownTime:5];
+//    timerExample6.resetTimerAfterFinish = YES;
+//    timerExample6.delegate = self;
+//    
+//    /*******************************************
+//     * ------Example 7-----
+//     * Countdown finish callback with convenient callback block
+//     * and showing how to set text of label after.
+//     ********************************************/
+//    timerExample7 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample7 andTimerType:MZTimerLabelTypeTimer];
+//    [timerExample7 setCountDownTime:0];
+//    timerExample7.resetTimerAfterFinish = NO; //IMPORTANT, if you needs custom text with finished, please do not set resetTimerAfterFinish to YES.
+//    timerExample7.timeFormat = @"mm:ss SS";
+//    
+//    /*******************************************
+//     * ------Example 8-----
+//     * Stopwatch with progress delegate that will change the text to red color if time counted > 10
+//     * Button to add 2 seconds each time you press.
+//     ********************************************/
+//    timerExample8 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample8];
+//    timerExample8.timeFormat = @"mm:ss";
+//    
+//    
+//    /*******************************************
+//     * ------Example 9-----
+//     * Use delegate to determine what text to be shown in corresponding time
+//     * This one display days as addtional hours, see implementation below
+//     ********************************************/
+//   
+//    timerExample9 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample9 andTimerType:MZTimerLabelTypeTimer];
+//    [timerExample9 setCountDownTime:3600*24*2];
+//    timerExample9.delegate = self;
+//    [timerExample9 start];
+//    
+//    /*******************************************
+//     * ------Example 10-----
+//     * Modify current couting timer of a stopwatch, see implemention below
+//     ********************************************/
+//    
+//    timerExample10 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample10 andTimerType:MZTimerLabelTypeStopWatch];
+//    [timerExample10 start];
+//    
+//    /*******************************************
+//     * ------Example 11-----
+//     * Modify current couting timer of a countdown timer, see implemention below
+//     ********************************************/
+//    
+//    timerExample11 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample11 andTimerType:MZTimerLabelTypeTimer];
+//    [timerExample11 setCountDownTime:3600];
+//    [timerExample11 start];
+//    
+//    /*******************************************
+//     * ------Example 12-----
+//     * You may need more than 23 hours display in some situation, like if you prefer showing 48 hours rather than 2days.
+//     * As MZTimerLabel uses NSDateFormatter to convert the time difference to String, there is no format string support 
+//     * this purpose, so you may implement custom display text demo om example 9. Or set the property `shouldCountBeyondHHLimit` of
+//     * MZTimerLabel. 
+//     * REMARKS: Only `HH` and `H` in the format string will be affected. Other hour format like "h", "k", "K" remain their own behaviour.
+//     ********************************************/
+//    
+//    timerExample12 = [[MZTimerLabel alloc] initWithLabel:_lblTimerExample12 andTimerType:MZTimerLabelTypeStopWatch];
+//    [timerExample12 setStopWatchTime:86395];
+//    [timerExample12 setShouldCountBeyondHHLimit:YES];
 
 }
 

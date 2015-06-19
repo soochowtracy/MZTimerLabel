@@ -17,6 +17,8 @@
 		3D31ED20180E7C480085D5D4 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D31ED1F180E7C480085D5D4 /* MZTimerLabel.m */; };
 		3D31ED26180E8FCA0085D5D4 /* DemoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D31ED25180E8FCA0085D5D4 /* DemoView.xib */; };
 		3D31ED28180E92F80085D5D4 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D31ED27180E92F80085D5D4 /* MainView.xib */; };
+		BF53396D1B328CD90009EF3B /* TCTTimerCore.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53396C1B328CD90009EF3B /* TCTTimerCore.m */; };
+		BF5339711B329BE20009EF3B /* TCTCountdownTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5339701B329BE20009EF3B /* TCTCountdownTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,11 @@
 		3D31ED1F180E7C480085D5D4 /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
 		3D31ED25180E8FCA0085D5D4 /* DemoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoView.xib; sourceTree = "<group>"; };
 		3D31ED27180E92F80085D5D4 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		BF53396B1B328CD90009EF3B /* TCTTimerCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTTimerCore.h; sourceTree = "<group>"; };
+		BF53396C1B328CD90009EF3B /* TCTTimerCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTTimerCore.m; sourceTree = "<group>"; };
+		BF53396E1B329B820009EF3B /* TCTTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTTimer.h; sourceTree = "<group>"; };
+		BF53396F1B329BE20009EF3B /* TCTCountdownTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTCountdownTimer.h; sourceTree = "<group>"; };
+		BF5339701B329BE20009EF3B /* TCTCountdownTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTCountdownTimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +127,11 @@
 			children = (
 				3D31ED1E180E7C480085D5D4 /* MZTimerLabel.h */,
 				3D31ED1F180E7C480085D5D4 /* MZTimerLabel.m */,
+				BF53396B1B328CD90009EF3B /* TCTTimerCore.h */,
+				BF53396C1B328CD90009EF3B /* TCTTimerCore.m */,
+				BF53396E1B329B820009EF3B /* TCTTimer.h */,
+				BF53396F1B329BE20009EF3B /* TCTCountdownTimer.h */,
+				BF5339701B329BE20009EF3B /* TCTCountdownTimer.m */,
 			);
 			name = MZTimerLabel;
 			path = ../MZTimerLabel;
@@ -192,9 +204,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D31ECF3180E7A570085D5D4 /* main.m in Sources */,
+				BF53396D1B328CD90009EF3B /* TCTTimerCore.m in Sources */,
 				3D31ED20180E7C480085D5D4 /* MZTimerLabel.m in Sources */,
 				3D31ECFD180E7A570085D5D4 /* MZTLViewController.m in Sources */,
 				3D31ECF7180E7A570085D5D4 /* MZTLAppDelegate.m in Sources */,
+				BF5339711B329BE20009EF3B /* TCTCountdownTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
